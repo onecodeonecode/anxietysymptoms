@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061a36">
+<meta name="description" content="Explore the history of the National Hockey League, from its founding in 1917 to today's game.">
+<title>The History of the NHL | A Century of Hockey</title>
+<style>
+:root{--navy:#061a36;--blue:#0759a8;--ice:#eaf5ff;--red:#e51d35;--ink:#102544;--muted:#526780;--line:#d5e4f3;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:linear-gradient(180deg,#061a36 0,#edf5fc 440px,#f7fbff 100%);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:#0759a8}a:focus-visible,button:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(4,19,41,.96);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff22;color:white}
+.nav{max-width:1160px;margin:auto;min-height:68px;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:white;text-decoration:none;font-weight:900;letter-spacing:.06em}.brand-mark{display:grid;place-items:center;width:40px;height:40px;border:2px solid white;border-radius:12px;font-size:13px;transform:skew(-5deg)}
+.navlinks{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.navlinks a{color:#e8f4ff;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:.9rem;font-weight:700}.navlinks a:hover{background:#ffffff18;color:white}
+.menu-toggle{display:none;border:1px solid #ffffff66;background:transparent;color:white;border-radius:8px;padding:8px 12px;font-size:1rem}
+main{max-width:1160px;margin:0 auto;padding:22px 20px 52px}
+.hero{position:relative;overflow:hidden;border-radius:22px;background:#061a36;box-shadow:0 18px 50px #061a3638}
+.hero img{display:block;width:100%;height:auto;max-height:900px;object-fit:contain;background:#061a36}
+.hero-caption{position:absolute;left:20px;bottom:18px;background:#061a36df;color:white;padding:10px 14px;border:1px solid #ffffff55;border-radius:12px;font-size:.85rem;backdrop-filter:blur(8px)}
+.hero-caption a{color:#bde2ff}
+.intro{background:white;margin:22px 0;padding:22px 24px;border-radius:18px;box-shadow:0 8px 28px #12395c12;border:1px solid var(--line)}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;color:var(--red);font-weight:900}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;margin:.35rem 0 .8rem;color:var(--navy)}h2{font-size:clamp(1.4rem,2.5vw,2rem);margin-bottom:8px;color:var(--navy)}h3{margin-bottom:8px}
+.lede{font-size:1.08rem;max-width:800px;color:#405873;margin-bottom:0}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:38px 0 16px}.section-heading p{margin:0;color:var(--muted);font-size:.92rem}
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{background:white;border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:16px;padding:20px;box-shadow:0 8px 25px #12395c0b;display:flex;flex-direction:column;min-width:0}
+.card.red{border-top-color:var(--red)}.card.green{border-top-color:#16865d}.card.purple{border-top-color:#6d3bc1}.card.orange{border-top-color:#ee8b13}
+.year{display:inline-flex;align-self:flex-start;border-radius:7px;background:#e9f3ff;color:#0759a8;padding:4px 9px;font-weight:900;font-size:.85rem;margin-bottom:9px}.card p{color:#425873;margin-bottom:12px}.card a,.resource a{font-weight:800;text-decoration:none}.card a:hover,.resource a:hover{text-decoration:underline}
+.pillrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:5px}.pill{background:#f0f5fa;border:1px solid #d9e5f1;border-radius:999px;padding:5px 9px;font-size:.78rem;font-weight:700;color:#344d68}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.stat{background:linear-gradient(145deg,#082852,#0759a8);color:white;padding:18px;border-radius:15px;box-shadow:0 8px 22px #09264b1a}.stat strong{display:block;font-size:clamp(1.6rem,3vw,2.35rem);line-height:1.1}.stat span{font-size:.85rem;color:#e3f1ff}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.feature{padding:20px;background:white;border:1px solid var(--line);border-radius:15px}.feature .icon{font-size:1.8rem;margin-bottom:8px}.feature p{color:var(--muted);margin-bottom:0}
+.teams{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.team{background:white;border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center;font-weight:800}.team small{display:block;font-weight:500;color:var(--muted);margin-top:3px}
+.callout{margin:35px 0;background:linear-gradient(120deg,#061a36,#0b4e91);color:white;border-radius:18px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.callout h2{color:white;margin-bottom:5px}.callout p{margin:0;color:#d6eaff}.button{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:white!important;text-decoration:none;font-weight:900;border:0;border-radius:10px;padding:11px 15px;cursor:pointer;white-space:nowrap}.button:hover{filter:brightness(1.08)}
+.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.resource{background:white;border:1px solid var(--line);border-radius:13px;padding:16px}.resource h3{font-size:1rem}.resource p{margin:0 0 9px;color:var(--muted);font-size:.92rem}
+footer{background:#041329;color:#d4e7fb;padding:28px 20px}.footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.footer-inner p{margin:0;font-size:.9rem}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a{color:white;text-decoration:none;font-size:.9rem}.backtop{position:fixed;right:18px;bottom:18px;border:0;background:var(--red);color:white;border-radius:50%;width:46px;height:46px;font-size:1.2rem;box-shadow:0 6px 18px #0003;cursor:pointer;display:none}.backtop.show{display:block}
+@media(max-width:850px){.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.teams{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.nav{padding:10px 14px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#041329;padding:10px 14px 16px;box-shadow:0 12px 20px #0003}.navlinks.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks a{padding:11px}.brand{font-size:.88rem}main{padding:14px 12px 35px}.hero{border-radius:14px}.hero-caption{position:static;border-radius:0;border:0;font-size:.78rem}.intro{padding:18px;margin:14px 0}.timeline,.feature-grid,.resources{grid-template-columns:1fr}.section-heading{display:block;margin-top:30px}.section-heading p{margin-top:5px}.teams{grid-template-columns:repeat(2,minmax(0,1fr))}.callout{display:block;padding:20px}.callout .button{margin-top:15px}.card{padding:17px}}
+@media print{.topbar,.backtop,.button,.hero-caption{display:none!important}body{background:white}main{max-width:none;padding:0}.card,.intro,.feature,.resource{box-shadow:none;break-inside:avoid}.hero img{max-height:650px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="NHL history home"><span class="brand-mark">NHL</span><span>HOCKEY HISTORY</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#timeline">Timeline</a><a href="#milestones">Milestones</a><a href="#teams">Teams</a><a href="#resources">Official Links</a>
+    </div>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero" aria-label="NHL history infographic">
+    <img src="nhl-history-infographic.png" alt="The History of the NHL infographic, showing major eras, iconic players, the Stanley Cup and league facts" fetchpriority="high">
+    <div class="hero-caption">Explore the infographic • <a href="https://www.nhl.com/" target="_blank" rel="noopener noreferrer">Visit NHL.com ↗</a></div>
+  </section>
+  <section class="intro">
+    <div class="eyebrow">1917 — Today</div>
+    <h1>The History of the National Hockey League</h1>
+    <p class="lede">From a small league founded in Montreal to a global sport, the NHL's story is shaped by legendary players, unforgettable rivalries, expansion, and the pursuit of the Stanley Cup. Explore key eras and jump to trusted hockey resources below.</p>
+  </section>
+
+  <section id="timeline">
+    <div class="section-heading"><div><div class="eyebrow">Across the decades</div><h2>League timeline</h2></div><p>Select a resource on any card to learn more.</p></div>
+    <div class="timeline">
+      <article class="card red"><span class="year">1917 · The beginning</span><h3>A new league is born</h3><p>The National Hockey League was founded on November 26, 1917, in Montreal, Quebec. The first season began with five clubs, setting the stage for a league that would grow for generations.</p><a href="https://www.nhl.com/" target="_blank" rel="noopener noreferrer">NHL official website ↗</a><div class="pillrow"><span class="pill">Montreal</span><span class="pill">First season: 1917–18</span></div></article>
+      <article class="card"><span class="year">1920s–1930s · Early years</span><h3>Challenges and growing popularity</h3><p>The early decades brought financial challenges, changing lineups, and a growing fan base. The league's identity developed as players and clubs built its traditions.</p><a href="https://www.hhof.com/" target="_blank" rel="noopener noreferrer">Hockey Hall of Fame ↗</a><div class="pillrow"><span class="pill">Tradition</span><span class="pill">Rivalries</span></div></article>
+      <article class="card green"><span class="year">1967 · Expansion</span><h3>A bigger stage</h3><p>The NHL doubled from six to twelve teams in 1967. The expansion transformed the league and introduced new rivalries and fan communities.</p><a href="https://www.nhl.com/history" target="_blank" rel="noopener noreferrer">NHL history ↗</a><div class="pillrow"><span class="pill">12 teams</span><span class="pill">New markets</span></div></article>
+      <article class="card purple"><span class="year">1942–1967 · Original Six era</span><h3>Six teams, lasting legends</h3><p>The Original Six era featured the Montreal Canadiens, Toronto Maple Leafs, Boston Bruins, Chicago Blackhawks, Detroit Red Wings, and New York Rangers.</p><a href="https://www.hhof.com/" target="_blank" rel="noopener noreferrer">Explore hockey history ↗</a><div class="pillrow"><span class="pill">Montreal</span><span class="pill">Toronto</span><span class="pill">Boston</span><span class="pill">Chicago</span><span class="pill">Detroit</span><span class="pill">New York</span></div></article>
+      <article class="card orange"><span class="year">1970s–1990s · Modern icons</span><h3>Superstars change the game</h3><p>Expansion brought new teams and fans. Players such as Bobby Orr, Wayne Gretzky, and Mario Lemieux helped define generations of hockey and raised the sport's profile.</p><a href="https://www.hhof.com/" target="_blank" rel="noopener noreferrer">Legends at the Hall of Fame ↗</a><div class="pillrow"><span class="pill">Skill</span><span class="pill">Speed</span><span class="pill">Superstars</span></div></article>
+      <article class="card red"><span class="year">2000–present · Today's NHL</span><h3>A global game</h3><p>Today's NHL features international talent, advanced analytics, improved equipment, and continued work to make the game safer and more accessible.</p><a href="https://www.nhl.com/" target="_blank" rel="noopener noreferrer">Latest NHL coverage ↗</a><div class="pillrow"><span class="pill">Global talent</span><span class="pill">Technology</span></div></article>
+    </div>
+  </section>
+
+  <section id="milestones">
+    <div class="section-heading"><div><div class="eyebrow">The big picture</div><h2>Hockey by the numbers</h2></div></div>
+    <div class="stats">
+      <div class="stat"><strong>1917</strong><span>Year the NHL was founded</span></div>
+      <div class="stat"><strong>32</strong><span>Teams in the 2026–27 season</span></div>
+      <div class="stat"><strong>1893</strong><span>Year the Stanley Cup was donated</span></div>
+      <div class="stat"><strong>100+</strong><span>Years of NHL history</span></div>
+    </div>
+    <div class="section-heading"><div><div class="eyebrow">Legends & traditions</div><h2>What makes the NHL iconic?</h2></div></div>
+    <div class="feature-grid">
+      <article class="feature"><div class="icon" aria-hidden="true">🏆</div><h3>The Stanley Cup</h3><p>One of the most celebrated trophies in sport, awarded annually to the NHL playoff champion.</p></article>
+      <article class="feature"><div class="icon" aria-hidden="true">⭐</div><h3>Legendary players</h3><p>Generations of players have redefined what is possible through skill, vision, leadership, and determination.</p></article>
+      <article class="feature"><div class="icon" aria-hidden="true">🥅</div><h3>Unforgettable rivalries</h3><p>Local pride, playoff battles, and historic matchups make every season a new chapter.</p></article>
+    </div>
+  </section>
+
+  <section id="teams">
+    <div class="section-heading"><div><div class="eyebrow">Across North America</div><h2>Explore NHL teams</h2></div><p>Team websites open in a new tab.</p></div>
+    <div class="teams">
+      <a class="team" href="https://www.nhl.com/canadiens/" target="_blank" rel="noopener noreferrer">Montreal Canadiens<small>Montreal, Quebec</small></a>
+      <a class="team" href="https://www.nhl.com/mapleleafs/" target="_blank" rel="noopener noreferrer">Toronto Maple Leafs<small>Toronto, Ontario</small></a>
+      <a class="team" href="https://www.nhl.com/bruins/" target="_blank" rel="noopener noreferrer">Boston Bruins<small>Boston, Massachusetts</small></a>
+      <a class="team" href="https://www.nhl.com/blackhawks/" target="_blank" rel="noopener noreferrer">Chicago Blackhawks<small>Chicago, Illinois</small></a>
+      <a class="team" href="https://www.nhl.com/redwings/" target="_blank" rel="noopener noreferrer">Detroit Red Wings<small>Detroit, Michigan</small></a>
+      <a class="team" href="https://www.nhl.com/rangers/" target="_blank" rel="noopener noreferrer">New York Rangers<small>New York, New York</small></a>
+      <a class="team" href="https://www.nhl.com/oilers/" target="_blank" rel="noopener noreferrer">Edmonton Oilers<small>Edmonton, Alberta</small></a>
+      <a class="team" href="https://www.nhl.com/penguins/" target="_blank" rel="noopener noreferrer">Pittsburgh Penguins<small>Pittsburgh, Pennsylvania</small></a>
+    </div>
+  </section>
+
+  <section class="callout">
+    <div><h2>Ready for more hockey?</h2><p>Get official news, scores, standings, stats, and historical features from the league.</p></div>
+    <a class="button" href="https://www.nhl.com/" target="_blank" rel="noopener noreferrer">Go to NHL.com ↗</a>
+  </section>
+
+  <section id="resources">
+    <div class="section-heading"><div><div class="eyebrow">Keep exploring</div><h2>Official hockey links</h2></div></div>
+    <div class="resources">
+      <article class="resource"><h3><a href="https://www.nhl.com/" target="_blank" rel="noopener noreferrer">National Hockey League ↗</a></h3><p>Official league news, scores, schedules, standings, statistics, and video.</p></article>
+      <article class="resource"><h3><a href="https://www.nhl.com/history" target="_blank" rel="noopener noreferrer">NHL History ↗</a></h3><p>Explore historical records, league milestones, and stories from past seasons.</p></article>
+      <article class="resource"><h3><a href="https://www.hhof.com/" target="_blank" rel="noopener noreferrer">Hockey Hall of Fame ↗</a></h3><p>Learn about inducted players, builders, teams, and important hockey artifacts.</p></article>
+      <article class="resource"><h3><a href="https://www.nhl.com/stanley-cup" target="_blank" rel="noopener noreferrer">Stanley Cup ↗</a></h3><p>Discover the trophy and the playoff tradition at the heart of the NHL.</p></article>
+    </div>
+  </section>
+</main>
+<footer><div class="footer-inner"><p>© <span id="year"></span> Hockey History • Made for hockey fans.</p><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://www.nhl.com/" target="_blank" rel="noopener noreferrer">NHL.com ↗</a><a href="https://www.hhof.com/" target="_blank" rel="noopener noreferrer">Hockey Hall of Fame ↗</a></div></div></footer>
+<button class="backtop" id="backTop" aria-label="Back to top">↑</button>
+<script>
+const menuToggle=document.getElementById('menuToggle');
+const navlinks=document.getElementById('navlinks');
+menuToggle.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.textContent=open?'✕ Close':'☰ Menu';});
+navlinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navlinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.textContent='☰ Menu';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>backTop.classList.toggle('show',window.scrollY>450),{passive:true});
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
